@@ -94,6 +94,7 @@ const Home = () => {
                       <th>Audio</th>
                       <th>Video</th>
                       <th>Quality</th>
+                      <th>Size</th>
                       <th>Action</th>
                     </tr>
                   </thead>
@@ -105,6 +106,7 @@ const Home = () => {
                         <td>{d?.hasAudio ? <IoCheckmarkSharp /> : <IoClose />}</td>
                         <td>{d?.hasVideo ? <IoCheckmarkSharp /> : <IoClose />}</td>
                         <td>{d?.qualityLabel ? d?.qualityLabel : '---'}</td>
+                        <td>{d?.contentLength ? (d?.contentLength / (1024 * 1024)).toFixed(2) + ' MB' : 'Unknown'}</td>
                         <td className="w-[100px] pr-5"><a href={d?.url} target='blank'><div className='bg-sky-500 p-2 rounded text-white font-[600] flex items-center gap-2 shadow-lg active:scale-95 cursor-pointer select-none w-fit' ><BiDownload />Download</div></a></td>
                       </tr>)
                     }
